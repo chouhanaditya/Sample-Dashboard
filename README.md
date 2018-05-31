@@ -1,5 +1,4 @@
-# yes
-
+# 
 > Sample dashboard
 
 ## Build Setup

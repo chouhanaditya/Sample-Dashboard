@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h2 style="text-align: center">Dashboard</h2>
+    <h2 style="text-align: center">Sample Dashboard</h2>
     <br>
     <subHeader :widgetList="widgetList"></subHeader>
     <br><br>

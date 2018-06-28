@@ -2,18 +2,14 @@
     <section class="row subHeader">
         <div class="col-12">
             <div class="card">
-                <div class="card-header" data-toggle="collapse" data-target="#widgetsUL" title="Control visibility of widgets">
-                    Customize Widgets Visibility
-                    <!--<i class="fa fa-plus-square fa-lg" style="float: right"></i>-->
-                </div>
-                <div class="card-body collapse" id="widgetsUL">
+                <div class="card-body" style="background-color: lightgrey;">
                     <p>
                         Check/ uncheck will control visibility of widgets on the dashboard below.
                     </p>
                     <div class="row">
                         <div class="col-3">
                             <ul class="list-group">
-                                <li class="list-group-item" v-for="widget in widgetsList_Col6" v-bind:key="widget.id">
+                                <li class="list-group-item" v-for="widget in widgetsList_Col6" v-bind:key="widget.id" >
                                     <input
                                             class="form-check-input"
                                             type="checkbox"

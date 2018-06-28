@@ -1,8 +1,18 @@
 <template>
-  <div class="container">
-    <h2 style="text-align: center">Sample Dashboard</h2>
+  <div class="container" style="position:relative;">
+    <div class="row">
+      <div class="col-12">
+        <h2 style="text-align: center">Sample Dashboard</h2>
+        <a v-on:click="IsPanelVisible=!IsPanelVisible" style="float: right" title="Customize Widgets Visibility">
+          <!-- <i class="fa fa-plus-circle fa-lg" v-if="IsPanelVisible === false"></i> -->
+          <!-- <i class="fa fa-minus-circle fa-lg" v-if="IsPanelVisible === true"></i> -->
+          <i class="fa fa-cogs fa-lg" ></i>
+
+        </a>
+      </div>
+    </div>
     <br>
-    <subHeader :widgetList="widgetList"></subHeader>
+    <subHeader :widgetList="widgetList" v-if="IsPanelVisible === true" id="subHeader"></subHeader>
     <br><br>
     <widgetsRowWithCol6 :widgetList="widgetList"></widgetsRowWithCol6>
     <br>
@@ -40,7 +50,8 @@ export default {
         new Widget(9, 'Widget 9', 3, 'silver', true, 'Pie'),
         new Widget(10, 'Widget 10', 3, 'lightgrey', true, 'Pie'),
         new Widget(11, 'Widget 11', 12, 'gold', true, 'Pie')
-      ]
+      ],
+      IsPanelVisible: false
     }
   },
   components: {
@@ -55,5 +66,12 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+  #subHeader {
+    position:absolute;
+    right: 0;
+    z-index: 1000;
+    background-color: lightgrey;
+    width: 100%;
+}
 
 </style>

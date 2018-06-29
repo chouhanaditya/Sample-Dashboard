@@ -6,6 +6,9 @@
                     <p>
                         Check/ uncheck will control visibility of widgets on the dashboard below.
                     </p>
+                    <a v-on:click="onClickButton()" style="float: right" title="Close this Panel">
+                      <i class="fa fa-window-close fa-lg" ></i>Close
+                    </a>
                     <div class="row">
                         <div class="col-3">
                             <ul class="list-group">
@@ -73,7 +76,7 @@
 <script>
 export default {
   name: 'subHeader',
-  props: ['widgetList'],
+  props: ['widgetList', 'IsPanelVisible'],
   computed: {
     widgetsList_Col6: function () {
       return this.widgetList.filter(x => x.size === 6)
@@ -104,6 +107,9 @@ export default {
     visibility_Col12_Changed: function (id) {
       var el = this.widgetsList_Col12.filter(x => x.id === id)[0]
       el.visible = !el.visible
+    },
+    onClickButton (event) {
+      this.$emit('clicked', false)
     }
   }
 

@@ -12,7 +12,13 @@
       </div>
     </div>
     <br>
-    <subHeader :widgetList="widgetList" v-if="IsPanelVisible === true" id="subHeader"></subHeader>
+    <subHeader
+      :widgetList="widgetList"
+      v-if="IsPanelVisible === true"
+      id="subHeader"
+      :IsPanelVisible="IsPanelVisible"
+      @clicked="onClickClose"
+    ></subHeader>
     <br><br>
     <widgetsRowWithCol6 :widgetList="widgetList"></widgetsRowWithCol6>
     <br>
@@ -60,6 +66,11 @@ export default {
     'widgetsRowWithCol4': widgetsRowWithCol4,
     'widgetsRowWithCol3': widgetsRowWithCol3,
     'widgetsRowWithCol12': widgetsRowWithCol12
+  },
+  methods: {
+    onClickClose (value) {
+      this.IsPanelVisible = value
+    }
   }
 }
 </script>
